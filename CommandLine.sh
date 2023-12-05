@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # What is the most-watched Netflix title?
 
 # Extract the title column (column 4) from the CSV file, excluding the header (NR > 1)
@@ -16,12 +14,16 @@ echo "Most-Watched Netflix title: $most_watched_title"
 # Report the average time between subsequent clicks on Netflix.com
 
 # Extract the duration column (column 3) from the CSV file, excluding the header (NR > 1)
-# Calculate the sum of durations and the average duration
-average_duration=$(
+# Calculate the sum of durations and the average duration in seconds
+average_duration_seconds=$(
   awk -F ',' 'NR > 1 {print $3}' vodclickstream_uk_movies_03.csv |  # Estrai la colonna delle durate escludendo l'header
-  awk '{sum += $1} END {print sum / NR}'                              # Calcola la somma delle durate e la media alla fine
+  awk '{sum += $1} END {print sum / NR}'                              # Calcola la somma delle durate e la media alla fine (in secondi)
 )
-echo "Average Time between subsequent clicks: $average_duration seconds"
+
+# Converti la media da secondi a ore
+average_duration_hours=$(echo "scale=2; $average_duration_seconds / 3600" | bc)
+
+echo "Average Time between subsequent clicks: $average_duration_hours hours"
 
 
 # Provide the ID of the user that has spent the most time on Netflix
@@ -34,3 +36,4 @@ user_with_most_time=$(
   awk '{print $1}'                                                  # Estrai solo l'ID dell'utente
 )
 echo "ID of the user with the most time spent on Netflix: $user_with_most_time"
+
