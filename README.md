@@ -33,7 +33,7 @@ Algorithmic Methods of Data Mining (Sc.M. in Data Science) Academic year 2023–
         2. If these two users have any movies in common, recommend those movies based on the total number of clicks by these users.
         3. If there are no more common movies, try to propose the most clicked movies by the most similar user first, followed by the other user.
 
-    ### Grouping Users together
+    ### 2. Grouping Users together
     At this stage, clustering algorithms will provide groups of Netflix users that are similar among them
 
     * **Getting your data + feature engineering** 
