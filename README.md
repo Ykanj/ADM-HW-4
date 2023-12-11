@@ -1,4 +1,4 @@
-# ADM_HW3 -Recommendation systems and clustering everywhere
+# ADM_HW4 -Recommendation systems and clustering everywhere
 Algorithmic Methods of Data Mining (Sc.M. in Data Science) Academic year 2023–2024. [Homewok 4](https://github.com/Sapienza-University-Rome/ADM/tree/master/2023/Homework_4)
 ---
 
